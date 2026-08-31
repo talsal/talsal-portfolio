@@ -1,0 +1,22 @@
+---
+import { education, militaryService } from '../data/education';
+---
+
+<section id="education" class="px-6 py-20">
+  <div class="fade-in-up mx-auto max-w-4xl">
+    <h2 class="mb-10 font-mono text-sm font-medium uppercase tracking-widest text-accent">
+      06 — Education &amp; Military Service
+    </h2>
+    <div class="grid gap-6 sm:grid-cols-2">
+      {
+        [...education, militaryService].map((entry) => (
+          <div class="rounded-xl border border-border bg-surface p-6">
+            <p class="font-mono text-xs text-ink-muted">{entry.years}</p>
+            <h3 class="mt-1 text-base font-semibold text-ink">{entry.title}</h3>
+            <p class="mt-1 text-sm text-ink-muted">{entry.institution}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

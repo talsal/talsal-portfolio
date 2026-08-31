@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import { projects } from '../data/projects';
+import imgDailySecretAddress from '../assets/images/screenshot-daily-secret-address.jpg';
+import imgPlaylistViewer from '../assets/images/screenshot-playlist-viewer.jpg';
+import imgYosefLySynagogue from '../assets/images/screenshot-yosef-ly-synagogue.jpg';
+
+const images = {
+  'daily-secret-address': imgDailySecretAddress,
+  'playlist-viewer': imgPlaylistViewer,
+  'yosef-ly-synagogue': imgYosefLySynagogue,
+} as const;
+---
+
+<section id="projects" class="px-6 py-20">
+  <div class="mx-auto max-w-6xl">
+    <h2 class="fade-in-up mb-2 font-mono text-sm font-medium uppercase tracking-widest text-accent">
+      05 — Featured Projects
+    </h2>
+    <p class="fade-in-up mb-10 max-w-2xl text-ink-muted">
+      Real, live, shipped products — proof of hands-on building beyond automation and testing.
+    </p>
+
+    <div class="grid gap-8 lg:grid-cols-3">
+      {
+        projects.map((project) => (
+          <article class="fade-in-up flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent">
+            <a href={project.primaryLink.href} target="_blank" rel="noopener noreferrer" class="block">
+              <Image
+                src={images[project.key]}
+                alt={project.imageAlt}
+                width={800}
+                height={500}
+                class="aspect-[8/5] w-full object-cover object-top"
+                loading="lazy"
+              />
+            </a>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-lg font-semibold text-ink">{project.title}</h3>
+              {project.hebrewTitle && (
+                <p dir="rtl" class="mb-1 text-sm text-ink-muted">
+                  {project.hebrewTitle}
+                </p>
+              )}
+              <p class="mb-4 mt-2 flex-1 text-sm leading-relaxed text-ink-muted">
+                {project.description}
+              </p>
+              <div class="mb-4 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span class="rounded-md border border-border px-2 py-0.5 font-mono text-xs text-ink-muted">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div class="flex flex-wrap gap-4 text-sm font-medium">
+                <a
+                  href={project.primaryLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-accent hover:underline"
+                >
+                  {project.primaryLink.label} →
+                </a>
+                {project.secondaryLink && (
+                  <a
+                    href={project.secondaryLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-ink-muted hover:text-accent hover:underline"
+                  >
+                    {project.secondaryLink.label} →
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

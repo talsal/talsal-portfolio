@@ -1,0 +1,61 @@
+---
+import { experience, earlierCareer } from '../data/experience';
+---
+
+<section id="experience" class="px-6 py-20">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="fade-in-up mb-10 font-mono text-sm font-medium uppercase tracking-widest text-accent">
+      03 — Experience
+    </h2>
+
+    <ol class="relative space-y-10 border-l border-border pl-8">
+      {
+        experience.map((job) => (
+          <li class="fade-in-up relative">
+            <span class="absolute -left-[2.28rem] top-1.5 h-3 w-3 rounded-full border-2 border-accent bg-bg" />
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 class="text-lg font-semibold text-ink">{job.role}</h3>
+              <span class="font-mono text-xs text-ink-muted">{job.years}</span>
+            </div>
+            <p class="mb-3 text-sm font-medium text-accent">{job.company}</p>
+            <ul class="mb-4 space-y-1.5 text-sm leading-relaxed text-ink-muted">
+              {job.bullets.map((bullet) => (
+                <li class="flex gap-2">
+                  <span aria-hidden="true" class="text-accent">
+                    ▸
+                  </span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-2">
+              {job.tech.map((tech) => (
+                <span class="rounded-md border border-border bg-surface px-2.5 py-1 font-mono text-xs text-ink-muted">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </li>
+        ))
+      }
+
+      <li class="fade-in-up relative">
+        <span class="absolute -left-[2.28rem] top-1.5 h-3 w-3 rounded-full border-2 border-border bg-bg" />
+        <h3 class="mb-3 text-lg font-semibold text-ink">Earlier Career</h3>
+        <ul class="space-y-2.5 text-sm leading-relaxed text-ink-muted">
+          {
+            earlierCareer.map((entry) => (
+              <li>
+                <span class="font-mono text-xs text-ink-muted">{entry.years}</span>
+                <span class="mx-1.5">—</span>
+                <span class="font-medium text-ink">{entry.role}</span>
+                <span> · {entry.company}: </span>
+                <span>{entry.summary}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
