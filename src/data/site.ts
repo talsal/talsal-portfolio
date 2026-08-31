@@ -5,12 +5,12 @@ export const site = {
     'Software Engineer — 28 years building software across the stack: languages from Python to Java to C#/.NET to Swift, systems from storage engines to CI/CD pipelines to GenAI-integrated platforms.',
   email: 'tal.salman@gmail.com',
   location: 'Modiin, Israel',
-  url: 'https://talsal.github.io',
+  url: 'https://talsal.github.io/talsal-portfolio',
   links: {
     linkedin: 'https://www.linkedin.com/in/tal-salman-60899231',
     github: 'https://github.com/talsal',
     instagram: 'https://www.instagram.com/talsalman.dev/',
     email: 'mailto:tal.salman@gmail.com',
   },
-  resumeUrl: '/resume/Tal_Salman_Resume.pdf',
+  resumeUrl: `${import.meta.env.BASE_URL}resume/Tal_Salman_Resume.pdf`,
 } as const;
