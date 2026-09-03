@@ -45,6 +45,7 @@ export const experience: ExperienceEntry[] = [
     years: '2016 – 2021',
     bullets: [
       'Technical lead for 3 engineers in a weekly-sprint Agile/Scrum environment.',
+      'Coordinated automation priorities and release readiness across Dev, QA, and DevOps teams as Tech Lead, keeping cross-team stakeholders aligned sprint over sprint.',
       'Owned full-cycle automated testing for SCADA cyber-domain protocols.',
       'Developed automation in Python on Linux, interfacing with Elasticsearch and PostgreSQL.',
       'Integrated with Jenkins for automated execution on every commit and release.',
