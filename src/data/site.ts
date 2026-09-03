@@ -1,8 +1,9 @@
 export const site = {
   name: 'Tal Salman',
   role: 'Software Engineer',
+  heroSubtitle: 'AI-Powered Automation Architect & Full-Stack Developer',
   tagline:
-    'Software Engineer — 28 years building software across the stack: languages from Python to Java to C#/.NET to Swift, systems from storage engines to CI/CD pipelines to GenAI-integrated platforms.',
+    'Software Engineer, 28 years experience — I build AI-powered automation systems, integrating Claude, GPT-4, and Gemini directly into engineering workflows, and ship full products end-to-end: websites, web apps, and native mobile.',
   email: 'tal.salman@gmail.com',
   location: 'Modiin, Israel',
   url: 'https://talsal.github.io/talsal-portfolio',
