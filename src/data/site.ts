@@ -1,7 +1,7 @@
 export const site = {
   name: 'Tal Salman',
   role: 'Software Engineer',
-  heroSubtitle: 'AI-Powered Automation Architect & Full-Stack Developer',
+  heroSubtitle: 'AI-Powered Automation Architect, Tech Lead & Full-Stack Developer',
   tagline:
     'Software Engineer, 28 years experience — I build AI-powered automation systems, integrating Claude, GPT-4, and Gemini directly into engineering workflows, and ship full products end-to-end: websites, web apps, and native mobile.',
   email: 'tal.salman@gmail.com',
