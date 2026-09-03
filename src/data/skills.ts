@@ -10,7 +10,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: 'AI & Data',
-    skills: ['Claude', 'GPT-4', 'Gemini', 'MongoDB', 'PostgreSQL', 'Elasticsearch', 'Oracle', 'MySQL'],
+    skills: ['Claude', 'Claude Code', 'GPT-4', 'Gemini', 'MongoDB', 'PostgreSQL', 'Elasticsearch', 'Oracle', 'MySQL'],
   },
   {
     title: 'Automation Frameworks',

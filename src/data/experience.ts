@@ -22,9 +22,10 @@ export const experience: ExperienceEntry[] = [
       "Designed and built a comprehensive QA regression framework from scratch in Python covering the product's core API infrastructure.",
       'Architected automated testing across omnichannel communication (WhatsApp, SMS, Email, Facebook, Instagram, Messenger, Chat, Voice, AI Bots).',
       'Integrated LLMs (Claude, GPT-4, Gemini) into the testing lifecycle for automated data verification and AI-based failure investigation.',
+      'Work hands-on daily with Claude Code, building custom Skills to automate and standardize recurring engineering workflows.',
       'Orchestrated nightly regression runs via GitHub Actions with real-time reporting to Google Chat.',
     ],
-    tech: ['Python', 'SQL', 'Grafana', 'Jira', 'GenAI Tools'],
+    tech: ['Python', 'SQL', 'Grafana', 'Jira', 'Claude Code'],
   },
   {
     role: 'Automation Lead Analyst (Tools Team)',

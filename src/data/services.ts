@@ -10,7 +10,7 @@ export const services: Service[] = [
   },
   {
     title: 'AI-Powered Automation & Agentic Workflows',
-    description: 'Building AI-powered systems that integrate LLMs (Claude, GPT-4, Gemini) directly into engineering and quality workflows.',
+    description: 'Building AI-powered systems and agentic workflows — LLM-integrated pipelines (Claude, GPT-4, Gemini) plus hands-on daily use of Claude Code and custom Skills.',
   },
   {
     title: 'Test Automation Architecture',
