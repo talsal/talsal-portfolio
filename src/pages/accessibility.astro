@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const homeUrl = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  lang="he"
+  dir="rtl"
+  title={`הצהרת נגישות — ${site.name}`}
+  description="הצהרת נגישות עבור אתר האינטרנט של תל סלמן."
+>
+  <main id="main-content" tabindex="-1" class="px-6 py-16">
+    <div class="mx-auto max-w-3xl">
+      <a href={homeUrl} class="text-sm text-accent hover:underline">&rarr; חזרה לדף הבית</a>
+
+      <h1 class="mb-8 mt-6 text-3xl font-bold text-ink sm:text-4xl">הצהרת נגישות</h1>
+
+      <div class="space-y-6 text-base leading-relaxed text-ink-muted">
+        <p>
+          אנו רואים חשיבות רבה במתן שירות שוויוני ונגיש לכלל המשתמשים, כולל אנשים עם מוגבלות.
+          אתר זה מיועד לעמוד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות
+          לשירות), התשע"ג-2013, בהתבסס על תקן ישראלי ת"י 5568 ברמת AA, המבוסס על הנחיות
+          הנגישות הבינלאומיות WCAG 2.1 ברמת AA.
+        </p>
+
+        <div>
+          <h2 class="mb-3 text-xl font-semibold text-ink">התאמות הנגישות שבוצעו באתר</h2>
+          <ul class="list-inside list-disc space-y-2">
+            <li>מבנה עמוד סמנטי עם אזור תוכן ראשי (main) מתויג, וקישור "דלג לתוכן הראשי" המופיע בתחילת העמוד עבור משתמשי מקלדת וקוראי מסך.</li>
+            <li>היררכיית כותרות סדורה (מרמת H1 לרמת H2 ולרמת H3, בסדר עולה) ללא דילוג רמות, לניווט נוח באמצעות קוראי מסך.</li>
+            <li>טקסט חלופי (alt) תיאורי לכל התמונות המשמעותיות באתר; אייקונים ואלמנטים גרפיים דקורטיביים מוסתרים מקוראי מסך כדי למנוע רעש מיותר.</li>
+            <li>ניגודיות צבעים בין טקסט לרקע שנבדקה ונמצאה עומדת ביחס הנדרש בתקן WCAG AA (4.5:1 לפחות לטקסט רגיל).</li>
+            <li>ניווט מלא במקלדת לכל הרכיבים האינטראקטיביים באתר (קישורים, כפתורים, תפריט נייד), עם אינדיקציית פוקוס ברורה וללא ביטול עיצוב הפוקוס.</li>
+            <li>תפריט הניווט בגרסה הנייידת מתויג בתקן ARIA מתאים (aria-expanded, aria-controls, aria-label) כך שמצבו ההפוך/פתוח מובן למשתמשי קוראי מסך.</li>
+            <li>כל הקישורים והכפתורים באתר בעלי שם נגיש (accessible name) ברור, כולל קישורי אייקונים לרשתות חברתיות.</li>
+          </ul>
+        </div>
+
+        <p>
+          אנו פועלים באופן שוטף לשיפור הנגישות באתר. יחד עם זאת, ייתכן שיימצאו חלקים באתר
+          שטרם עומדים במלואם בדרישות הנגישות. אנו מתנצלים מראש על אי-הנוחות ומזמינים אתכם
+          לפנות אלינו בכל בעיה שנתקלתם בה.
+        </p>
+
+        <div>
+          <h2 class="mb-3 text-xl font-semibold text-ink">פנייה בנושא נגישות</h2>
+          <p>
+            נתקלתם בבעיית נגישות באתר? נשמח שתפנו אלינו ונטפל בכך בהקדם:
+          </p>
+          <p class="mt-2">
+            <a href={site.links.email} class="font-medium text-accent hover:underline">{site.email}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

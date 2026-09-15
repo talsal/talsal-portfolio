@@ -5,11 +5,15 @@ import { site } from '../data/site';
 interface Props {
   title?: string;
   description?: string;
+  lang?: string;
+  dir?: 'ltr' | 'rtl';
 }
 
 const {
   title = `${site.name} — ${site.role}`,
   description = site.tagline,
+  lang = 'en',
+  dir = 'ltr',
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
@@ -33,7 +37,7 @@ const personSchema = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang} dir={dir}>
   <head>
     <!-- Google tag (gtag.js) -->
     <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-D64TDNXP98"></script>
@@ -74,6 +78,12 @@ const personSchema = {
     <script type="application/ld+json" is:inline set:html={JSON.stringify(personSchema)} />
   </head>
   <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-bg"
+    >
+      Skip to main content
+    </a>
     <slot />
     <script>
       const revealEls = document.querySelectorAll('.fade-in-up');
