@@ -4,11 +4,13 @@ import { projects } from '../data/projects';
 import imgDailySecretAddress from '../assets/images/screenshot-daily-secret-address.jpg';
 import imgPlaylistViewer from '../assets/images/screenshot-playlist-viewer.jpg';
 import imgYosefLySynagogue from '../assets/images/screenshot-yosef-ly-synagogue.jpg';
+import imgDganitFruitDesserts from '../assets/images/screenshot-dganit-fruit-desserts.jpg';
 
 const images = {
   'daily-secret-address': imgDailySecretAddress,
   'playlist-viewer': imgPlaylistViewer,
   'yosef-ly-synagogue': imgYosefLySynagogue,
+  'dganit-fruit-desserts': imgDganitFruitDesserts,
 } as const;
 ---
 
@@ -21,7 +23,7 @@ const images = {
       Real, live, shipped products — proof of hands-on building beyond automation and testing.
     </p>
 
-    <div class="grid gap-8 lg:grid-cols-3">
+    <div class="grid gap-8 md:grid-cols-2">
       {
         projects.map((project) => (
           <article class="fade-in-up flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent">
