@@ -1,5 +1,5 @@
 export interface Project {
-  key: 'daily-secret-address' | 'playlist-viewer' | 'yosef-ly-synagogue';
+  key: 'daily-secret-address' | 'playlist-viewer' | 'yosef-ly-synagogue' | 'dganit-fruit-desserts';
   title: string;
   hebrewTitle?: string;
   description: string;
@@ -38,5 +38,15 @@ export const projects: Project[] = [
     imageAlt: 'Screenshot of the Yosef-Ly Synagogue community website',
     primaryLink: { label: 'View project', href: 'https://talsal.github.io/yosef-ly-synagogue/' },
     tags: ['Astro', 'Community Site', 'Client Work'],
+  },
+  {
+    key: 'dganit-fruit-desserts',
+    title: "Dganit's Homemade Fruit Desserts",
+    hebrewTitle: 'קינוחי פירות ביתיים של דגנית',
+    description:
+      'A Hebrew, right-to-left storefront for a small home dessert business: a menu of kosher fruit desserts, a photo gallery with click-to-enlarge, and a step-by-step ordering guide. The order form lets customers pick quantities per dessert, see a running total, and send a prefilled WhatsApp order with no account or backend. All prices, flavors, and photos live in a single data file so the owner can update them without touching the layout. Mobile-first, accessible, and SEO-ready with Open Graph previews and structured data.',
+    imageAlt: "Screenshot of Dganit's Homemade Fruit Desserts site showing dessert photos and order buttons",
+    primaryLink: { label: 'View project', href: 'https://talsal.github.io/dganit-fruit-desserts/' },
+    tags: ['JavaScript', 'HTML/CSS', 'RTL / Hebrew', 'WhatsApp Ordering', 'Client Work'],
   },
 ];
