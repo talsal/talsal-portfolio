@@ -1,0 +1,152 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { freelance } from '../data/freelance';
+import imgDailySecretAddress from '../assets/images/screenshot-daily-secret-address.jpg';
+import imgPlaylistViewer from '../assets/images/screenshot-playlist-viewer.jpg';
+import imgYosefLySynagogue from '../assets/images/screenshot-yosef-ly-synagogue.jpg';
+
+const images = {
+  'daily-secret-address': {
+    src: imgDailySecretAddress,
+    alt: 'צילום מסך של אפליקציית הכתובת היומית עם תוכן קבלי יומי',
+  },
+  'playlist-viewer': {
+    src: imgPlaylistViewer,
+    alt: 'צילום מסך של אתר Playlist Viewer עם רשימת הקלטות לחיפוש',
+  },
+  'yosef-ly-synagogue': {
+    src: imgYosefLySynagogue,
+    alt: 'צילום מסך של אתר הקהילה של בית הכנסת יוסף-לי',
+  },
+} as const;
+
+const base = import.meta.env.BASE_URL;
+const accessibilityUrl = `${base}accessibility/`;
+const year = new Date().getFullYear();
+
+const primaryBtn =
+  'rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg transition-transform hover:scale-105';
+const secondaryBtn =
+  'rounded-full border border-border px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-accent hover:text-accent';
+---
+
+<BaseLayout
+  lang="he"
+  dir="rtl"
+  title="טל סלמן — בניית אתרים, אפליקציות ואוטומציה לעסקים"
+  description="בניית אתרים ואפליקציות, פיתוח יישומים מסחריים, אוטומציה של תהליכים עסקיים ושילוב כלי AI בעסק. 28 שנות ניסיון, שיחה ללא התחייבות."
+  ogImage="og-image-freelance.png"
+>
+  <main id="main-content" tabindex="-1">
+    <section class="relative overflow-hidden px-6 pb-20 pt-20 md:pt-28">
+      <div
+        class="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-accent opacity-10 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="mb-4 font-mono text-sm font-medium text-accent">{site.name} · פיתוח ואוטומציה לעסקים</p>
+        <h1 class="mb-6 text-4xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
+          צריכים אתר, אפליקציה או פתרון שיחסוך לכם עבודה?
+        </h1>
+        <p class="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-ink-muted">
+          אני טל, מהנדס תוכנה עם 28 שנות ניסיון מקצועי. מציע שירותי פיתוח באופן עצמאי — מהרעיון
+          ועד מוצר חי שעובד.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href={freelance.whatsappHref} target="_blank" rel="noopener noreferrer" class={primaryBtn}>
+            דברו איתי בוואטסאפ
+          </a>
+          <a href={freelance.phoneHref} class={secondaryBtn}>
+            <span dir="ltr">{freelance.phoneDisplay}</span>
+          </a>
+        </div>
+        <p class="mt-5 text-sm text-ink-muted">שיחה ראשונה ללא התחייבות</p>
+      </div>
+    </section>
+
+    <section id="services" class="px-6 py-16">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-10 text-2xl font-bold text-ink">במה אני יכול לעזור</h2>
+        <div class="grid gap-5 sm:grid-cols-2">
+          {
+            freelance.services.map((service) => (
+              <div class="rounded-xl border border-border bg-surface p-6">
+                <h3 class="mb-2 text-lg font-semibold text-ink">{service.title}</h3>
+                <p class="leading-relaxed text-ink-muted">{service.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="px-6 py-16">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-2 text-2xl font-bold text-ink">עבודות ופרויקטים</h2>
+        <p class="mb-10 max-w-2xl text-ink-muted">מוצרים אמיתיים שבניתי ופועלים באוויר — אפשר להיכנס ולנסות.</p>
+        <div class="grid gap-8 lg:grid-cols-3">
+          {
+            freelance.projects.map((project) => (
+              <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent">
+                <a href={project.href} target="_blank" rel="noopener noreferrer" tabindex="-1" class="block">
+                  <Image
+                    src={images[project.key].src}
+                    alt={images[project.key].alt}
+                    width={800}
+                    height={500}
+                    class="aspect-[8/5] w-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </a>
+                <div class="flex flex-1 flex-col p-6">
+                  <h3 class="mb-2 text-lg font-semibold text-ink">{project.title}</h3>
+                  <p class="mb-4 flex-1 text-sm leading-relaxed text-ink-muted">{project.description}</p>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm font-medium text-accent hover:underline"
+                  >
+                    {project.linkLabel} &larr;
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="px-6 py-20">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="mb-4 text-3xl font-bold text-ink">יש לכם עסק או רעיון שצריך פיתוח?</h2>
+        <p class="mb-8 leading-relaxed text-ink-muted">
+          אפשר לפנות ישירות לשיחה ללא התחייבות. מכירים מישהו שצריך? מוזמנים להעביר הלאה.
+        </p>
+        <div class="mb-6 flex flex-wrap items-center justify-center gap-4">
+          <a href={freelance.whatsappHref} target="_blank" rel="noopener noreferrer" class={primaryBtn}>
+            דברו איתי בוואטסאפ
+          </a>
+          <a href={freelance.phoneHref} class={secondaryBtn}>
+            <span dir="ltr">{freelance.phoneDisplay}</span>
+          </a>
+        </div>
+        <a href={site.links.email} class="font-medium text-accent hover:underline">{site.email}</a>
+        <p class="mt-2 text-sm text-ink-muted">מודיעין, ישראל</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-border px-6 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 text-sm text-ink-muted sm:flex-row">
+      <p>&copy; {year} {site.name}</p>
+      <div class="flex items-center gap-4">
+        <a href={accessibilityUrl} class="hover:text-accent">הצהרת נגישות</a>
+        <a href={base} class="hover:text-accent" lang="en" dir="ltr">Resume site</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

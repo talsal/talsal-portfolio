@@ -7,6 +7,7 @@ interface Props {
   description?: string;
   lang?: string;
   dir?: 'ltr' | 'rtl';
+  ogImage?: string;
 }
 
 const {
@@ -14,10 +15,12 @@ const {
   description = site.tagline,
   lang = 'en',
   dir = 'ltr',
+  ogImage = 'og-image.png',
 } = Astro.props;
 
+const skipLinkLabel = lang === 'he' ? 'דלג לתוכן הראשי' : 'Skip to main content';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const ogImageUrl = new URL(`${import.meta.env.BASE_URL}og-image.png`, Astro.site);
+const ogImageUrl = new URL(`${import.meta.env.BASE_URL}${ogImage}`, Astro.site);
 const faviconUrl = `${import.meta.env.BASE_URL}favicon.svg`;
 
 const personSchema = {
@@ -82,7 +85,7 @@ const personSchema = {
       href="#main-content"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-bg"
     >
-      Skip to main content
+      {skipLinkLabel}
     </a>
     <slot />
     <script>
