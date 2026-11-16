@@ -1,5 +1,5 @@
 export interface Project {
-  key: 'daily-secret-address' | 'playlist-viewer' | 'yosef-ly-synagogue' | 'dganit-fruit-desserts';
+  key: 'daily-secret-address' | 'playlist-viewer' | 'yosef-ly-synagogue' | 'dganit-fruit-desserts' | 'ginzei-haim' | 'shut-harav-yoel';
   title: string;
   hebrewTitle?: string;
   description: string;
@@ -48,5 +48,25 @@ export const projects: Project[] = [
     imageAlt: "Screenshot of Dganit's Homemade Fruit Desserts site showing dessert photos and order buttons",
     primaryLink: { label: 'View project', href: 'https://talsal.github.io/dganit-fruit-desserts/' },
     tags: ['JavaScript', 'HTML/CSS', 'RTL / Hebrew', 'WhatsApp Ordering', 'Client Work'],
+  },
+  {
+    key: 'ginzei-haim',
+    title: 'Ginzei Haim — Rabbi Yoel Hakoun Lessons',
+    hebrewTitle: 'גנזי חיים — שיעורי הרב יואל חקון',
+    description:
+      "A Hebrew, right-to-left archive of over 1,300 Kabbalah lessons by Rabbi Yoel Hakoun, available as video, MP3 recordings and PDF source sheets. Lessons are organized by topic and by location, with search, favorites, a built-in player and light/dark themes.",
+    imageAlt: 'Screenshot of the Ginzei Haim site showing lesson topics and a search box',
+    primaryLink: { label: 'View project', href: 'https://ginzei-haim.org/' },
+    tags: ['JavaScript', 'RTL / Hebrew', 'Search', 'Media Archive', 'Client Work'],
+  },
+  {
+    key: 'shut-harav-yoel',
+    title: 'Q&A on Prayer Kavanot',
+    hebrewTitle: 'שו"ת לימוד כוונות למהדרין',
+    description:
+      "A searchable Hebrew archive of 221 questions and answers collected from a Torah-study WhatsApp group on the kavanot (intentions) of prayer. Organized by the order of the prayer service and the Jewish year, with filters by section, category and answerer.",
+    imageAlt: 'Screenshot of the Q&A site on prayer kavanot showing search and filter controls',
+    primaryLink: { label: 'View project', href: 'https://talsal.github.io/shut-harav-yoel/' },
+    tags: ['JavaScript', 'RTL / Hebrew', 'Search & Filter', 'Client Work'],
   },
 ];
