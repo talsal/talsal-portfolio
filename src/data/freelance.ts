@@ -49,5 +49,13 @@ export const freelance = {
       href: 'https://talsal.github.io/yosef-ly-synagogue/',
       linkLabel: 'לאתר',
     },
+    {
+      key: 'dganit-fruit-desserts',
+      title: 'קינוחי פירות ביתיים של דגנית',
+      description:
+        'אתר הזמנות לעסק ביתי קטן — תפריט קינוחים, גלריית תמונות והזמנה פשוטה שנשלחת בוואטסאפ עם סיכום מחיר, בלי חשבון ובלי שרת. המחירים והתמונות מתעדכנים בקובץ אחד.',
+      href: 'https://talsal.github.io/dganit-fruit-desserts/',
+      linkLabel: 'לאתר',
+    },
   ],
 } as const;

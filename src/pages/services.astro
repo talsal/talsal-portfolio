@@ -6,6 +6,7 @@ import { freelance } from '../data/freelance';
 import imgDailySecretAddress from '../assets/images/screenshot-daily-secret-address.jpg';
 import imgPlaylistViewer from '../assets/images/screenshot-playlist-viewer.jpg';
 import imgYosefLySynagogue from '../assets/images/screenshot-yosef-ly-synagogue.jpg';
+import imgDganitFruitDesserts from '../assets/images/screenshot-dganit-fruit-desserts.jpg';
 
 const images = {
   'daily-secret-address': {
@@ -19,6 +20,10 @@ const images = {
   'yosef-ly-synagogue': {
     src: imgYosefLySynagogue,
     alt: 'צילום מסך של אתר הקהילה של בית הכנסת יוסף-לי',
+  },
+  'dganit-fruit-desserts': {
+    src: imgDganitFruitDesserts,
+    alt: 'צילום מסך של אתר קינוחי הפירות הביתיים של דגנית עם תמונות קינוחים וכפתורי הזמנה',
   },
 } as const;
 
@@ -87,7 +92,7 @@ const secondaryBtn =
       <div class="mx-auto max-w-6xl">
         <h2 class="mb-2 text-2xl font-bold text-ink">עבודות ופרויקטים</h2>
         <p class="mb-10 max-w-2xl text-ink-muted">מוצרים אמיתיים שבניתי ופועלים באוויר — אפשר להיכנס ולנסות.</p>
-        <div class="grid gap-8 lg:grid-cols-3">
+        <div class="grid gap-8 md:grid-cols-2">
           {
             freelance.projects.map((project) => (
               <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent">
