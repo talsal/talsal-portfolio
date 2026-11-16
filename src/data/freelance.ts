@@ -26,6 +26,14 @@ export const freelance = {
   ],
   projects: [
     {
+      key: 'ginzei-haim',
+      title: 'גנזי חיים — אתר הרב יואל',
+      description:
+        'אתר שיעורי הקבלה של הרב יואל חקון: למעלה מ-1,300 שיעורים בווידאו, בהקלטות ובדפי מקורות, מסודרים לפי נושאים, עם חיפוש, מועדפים ונגן מובנה.',
+      href: 'https://ginzei-haim.org/',
+      linkLabel: 'לאתר',
+    },
+    {
       key: 'daily-secret-address',
       title: 'הכתובת היומית על פי הרש״ש',
       description:

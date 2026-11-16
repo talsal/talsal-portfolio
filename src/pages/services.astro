@@ -7,9 +7,14 @@ import imgDailySecretAddress from '../assets/images/screenshot-daily-secret-addr
 import imgPlaylistViewer from '../assets/images/screenshot-playlist-viewer.jpg';
 import imgYosefLySynagogue from '../assets/images/screenshot-yosef-ly-synagogue.jpg';
 import imgDganitFruitDesserts from '../assets/images/screenshot-dganit-fruit-desserts.jpg';
+import imgGinzeiHaim from '../assets/images/screenshot-ginzei-haim.jpg';
 import imgShutHaravYoel from '../assets/images/screenshot-shut-harav-yoel.jpg';
 
 const images = {
+  'ginzei-haim': {
+    src: imgGinzeiHaim,
+    alt: 'צילום מסך של אתר גנזי חיים עם שיעורי הרב יואל חקון לפי נושאים וחיפוש',
+  },
   'daily-secret-address': {
     src: imgDailySecretAddress,
     alt: 'צילום מסך של אפליקציית הכתובת היומית עם תוכן קבלי יומי',
@@ -97,7 +102,7 @@ const secondaryBtn =
       <div class="mx-auto max-w-6xl">
         <h2 class="mb-2 text-2xl font-bold text-ink">עבודות ופרויקטים</h2>
         <p class="mb-10 max-w-2xl text-ink-muted">מוצרים אמיתיים שבניתי ופועלים באוויר — אפשר להיכנס ולנסות.</p>
-        <div class="grid gap-8 md:grid-cols-2">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {
             freelance.projects.map((project) => (
               <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent">
