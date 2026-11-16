@@ -57,5 +57,13 @@ export const freelance = {
       href: 'https://talsal.github.io/dganit-fruit-desserts/',
       linkLabel: 'לאתר',
     },
+    {
+      key: 'shut-harav-yoel',
+      title: 'שו"ת לימוד כוונות למהדרין',
+      description:
+        'ארכיון של 221 שאלות ותשובות מקבוצת לימוד של הרב יואל חקון, מסודר לפי נושאים וסדר התפילה, עם חיפוש וסינון לפי חלק, קטגוריה ומשיב.',
+      href: 'https://talsal.github.io/shut-harav-yoel/',
+      linkLabel: 'לאתר',
+    },
   ],
 } as const;
